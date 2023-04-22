@@ -1,0 +1,20 @@
+{% extends "default.html" %}
+{% load crispy_forms_tags %}
+
+{% block title %}
+Профиль пользователя
+{% endblock title %}
+
+{% block content %}
+       <center><form method="POST" enctype="multipart/form-data" style="font-size: 20px;">
+          {% csrf_token %}
+          <fieldset class="form-group">
+              <legend class="border-bottom mb-4" style="font-size: 25px; margin: 15px 0 15px;">Ваш профиль</legend>
+              {{ u_form|crispy }}
+              {{ p_form|crispy }}
+          </fieldset>
+          <div class="form-group">
+              <button class="btn btn-outline-info" type="submit" style="font-size: 20px;">Обновить</button>
+          </div>
+      </form></center>
+{% endblock content %}

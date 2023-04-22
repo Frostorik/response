@@ -1,0 +1,24 @@
+{% extends "default.html" %}
+{% load crispy_forms_tags %}
+
+{% block title %}
+Регистрация
+{% endblock title %}
+
+{% block content %}
+    <center><div class="content-section" style="">
+        <form method="POST">
+            {% csrf_token %}
+            <fieldset class="form-group" style="font-size: 20px;">
+                <strong><legend class="border-bottom mb-4" style="font-size: 30px; margin: 15px 0 15px;">Добро пожаловать на фанатский сервер одной известной MMORPG </legend></strong>
+                {{ form|crispy }}
+            </fieldset>
+            <div class="form-group" style="">
+                <button class="btn btn-outline-info" style="font-size: 20px; margin: -5px 0 15px;" type="submit">Регистрация</button>
+            </div>
+        </form>
+        <div class="border-top pt-3">
+            <small class="text-muted" style="font-size: 20px;">Уже есть аккаунт? <a class="ml-2" style="color: blue;" href="/login/">Вход</a></small>
+        </div>
+    </div></center>
+{% endblock content %}

@@ -1,0 +1,21 @@
+{% extends "default.html" %}
+{% load crispy_forms_tags %}
+
+{% block title %}
+Добавление объявления
+{% endblock title %}
+
+{% block content %}
+    <center><div class="content-section" style="">
+        <form method="POST">
+            {% csrf_token %}
+            <fieldset class="form-group">
+                <legend class="border-bottom mb-4" style="font-size: 30px; margin: 15px 0 10px;">Новое объявление</legend>
+                {{ form|crispy }}
+            </fieldset>
+            <div class="form-group">
+                <button class="btn btn-outline-info" type="submit">Сохранить</button>
+            </div>
+        </form>
+    </div></center>
+{% endblock content %}
